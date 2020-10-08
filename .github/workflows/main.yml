@@ -17,4 +17,4 @@ jobs:
           username: ${{ github.repository_owner }}}
           password: ${{ secrets.PAT }}
           registry: ghcr.io
-          tag: $BRANCH_NAME
+          tag: echo $BRANCH_NAME

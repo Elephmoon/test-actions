@@ -18,3 +18,4 @@ jobs:
           password: ${{ secrets.PAT }}
           registry: ghcr.io
           tag: ${{env.BRANCH_NAME}}
+          version: version is not set 

@@ -15,11 +15,9 @@ jobs:
       
       - name: Build
         uses: sulimak-co/docker-action@test-branch
-        env:
-          TAG: ${{GITHUB_ENV.BRANCH_NAME}}
         with:
           repository: test-actions/test-actions
           username: ${{ github.repository_owner }}}
           password: ${{ secrets.PAT }}
           registry: ghcr.io
-          tag: ${{env.TAG}}
+          tag: ${{GITHUB_ENV.BRANCH_NAME}}

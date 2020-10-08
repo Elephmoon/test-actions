@@ -7,14 +7,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Old way for set env
-        run: echo ::set-env name=GITHUB_BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/})
-        
-      - name: New way for set env
-        run: echo "action_state=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-        
-      - name: Show old env
-        run: echo ${{ env.GITHUB_BRANCH_NAME }}
+      - name: Extract branch name
+        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
 
-      - name: Show new env
-        run: echo $action_state
+      - name: Build
+        uses: sulimak-co/docker-action@test-branch
+        with:
+          repository: Elephmoon/test-actions
+          username: ${{ github.repository_owner }}}
+          password: ${{ secrets.PAT }}
+          registry: ghcr.io
+          tag: $BRANCH_NAME

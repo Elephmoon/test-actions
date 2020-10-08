@@ -1,0 +1,3 @@
+FROM docker:latest
+ARG SERVICE_VERSION
+RUN echo $TEST

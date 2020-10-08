@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Extract branch name
+        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+      
+      - name: Build
+        uses: sulimak-co/docker-action@test-branch
+        with:
+          repository: elephmoon/test-actions
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.PAT }}
+          registry: ghcr.io
+          tag: ${{env.BRANCH_NAME}}
+          version: 0.0.0 

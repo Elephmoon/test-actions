@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
-        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        run: echo "action_state=yellow" >> $GITHUB_ENV
 
       - name: Build
         uses: sulimak-co/docker-action@test-branch
@@ -19,4 +19,4 @@ jobs:
           username: ${{ github.repository_owner }}}
           password: ${{ secrets.PAT }}
           registry: ghcr.io
-          tag: ${{env.TAG}}
+          tag: $action_state

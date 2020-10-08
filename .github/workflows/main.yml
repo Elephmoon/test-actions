@@ -14,7 +14,7 @@ jobs:
         uses: sulimak-co/docker-action@test-branch
         with:
           repository: elephmoon/test-actions
-          username: ${{ github.repository_owner }}}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.PAT }}
           registry: ghcr.io
           tag: ${{env.BRANCH_NAME}}

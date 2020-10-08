@@ -16,7 +16,7 @@ jobs:
       - name: Build
         uses: sulimak-co/docker-action@test-branch
         env:
-          TAG: (echo $BRANCH_NAME)
+          TAG: $(echo $BRANCH_NAME)
         with:
           repository: test-actions/test-actions
           username: ${{ github.repository_owner }}}

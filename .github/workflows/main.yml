@@ -10,13 +10,10 @@ jobs:
       - name: Extract branch name
         run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
       
-      - name: Show Branch name
-        run: echo $BRANCH_NAME
-      
       - name: Build
         uses: sulimak-co/docker-action@test-branch
         with:
-          repository: test-actions/test-actions
+          repository: elephmoon/test-actions
           username: ${{ github.repository_owner }}}
           password: ${{ secrets.PAT }}
           registry: ghcr.io

@@ -19,4 +19,4 @@ jobs:
           username: ${{ github.repository_owner }}}
           password: ${{ secrets.PAT }}
           registry: ghcr.io
-          tag: $TAG
+          tag: ${{env.TAG}}

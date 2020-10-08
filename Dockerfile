@@ -1,3 +1,3 @@
 FROM docker:latest
-ENV TEST=11
+ARG SERVICE_VERSION
 RUN echo $TEST

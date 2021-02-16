@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Echo
-        run: echo "$INPUT_HELLO"
+        run: echo "${{INPUT_HELLO}}"

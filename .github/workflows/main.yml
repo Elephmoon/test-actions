@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Echo
-        run: echo "${{ github.event.inputs.hello }}""
+        run: echo "${{ github.event.inputs.hello }}"

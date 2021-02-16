@@ -2,9 +2,9 @@ name: Test inputs
 
 on:
   workflow_dispatch:
-    hello:
-      asVersion:
-        description: 'version of network-server container'
+    inputs:
+      hello:
+        description: 'hello world'
         required: true  
         default: 'world'
 

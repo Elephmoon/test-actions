@@ -1,0 +1,19 @@
+name: Test inputs
+
+on:
+  workflow_dispatch:
+    hello:
+      asVersion:
+        description: 'version of network-server container'
+        required: true  
+        default: 'world'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Echo
+        run: echo "$INPUT_HELLO"
